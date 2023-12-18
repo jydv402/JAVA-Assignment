@@ -1,0 +1,1245 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>JAVA Assignment</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="42824e7f-7a12-478f-b55e-18f39865a799" class="page sans"><header><h1 class="page-title">JAVA Assignment</h1><p class="page-description"></p></header><div class="page-body"><h2 id="4f314b3a-90ce-4cbc-92e5-8d40796cceaa" class="">Submitted by:</h2><h3 id="70ff198f-527e-48e4-9886-0370d08e930f" class="">               Jayadev B S</h3><h3 id="ca8a32d9-bfc7-42c4-a2f8-c4a865ed0ebb" class="">               S3 R1 30</h3><p id="3d9694f9-967c-4b4d-b3d1-8708755e8953" class="">
+</p><p id="53bd3066-55e2-4d26-ac00-c65107577f1f" class="">
+</p><ol type="1" id="61c9880d-720d-4c33-9dc1-9368d1932178" class="numbered-list" start="1"><li><strong>Write a Java program to reverse a given string.</strong></li></ol><p id="f81ed8ce-d506-4360-9cb4-6429e86673f3" class="">Program: </p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="22fa79b4-9f6c-4dc4-84e2-0020720a512c" class="code"><code class="language-Java">import java.util.Scanner;
+
+public class ReverseStr {
+    public static void main(String args[]) {
+        String a, b = &quot;&quot;;
+        Scanner sc = new Scanner(System.in);
+        System.out.print(&quot;Enter the string: &quot;);
+        a = sc.nextLine();
+
+        for (int i = 0; i &lt; a.length(); i++) {
+            b = a.charAt(i) + b;
+        }
+
+        System.out.print(&quot;The reversed string is : \n\t&quot; + b);
+        sc.close();
+    }
+}</code></pre><p id="16a89461-9c67-4784-9481-08aff7aff408" class="">Output: </p><figure id="f8f4e952-2a21-46ae-9e30-c97390fa4beb" class="image"><a href="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled.png"><img style="width:501px" src="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled.png"/></a></figure><p id="84d7156e-a86f-4b14-b069-ab2bb56790d4" class="">
+</p><ol type="1" id="5a560657-0e17-4138-ad60-861f0f3f6453" class="numbered-list" start="2"><li><strong>Write a Java program to display the transpose of a given matrix.</strong></li></ol><p id="0d9afaab-54a6-48bb-a8ab-198e15ad8e73" class="">Program:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="cdc19cc1-f1f6-449a-9104-a565c736ce49" class="code"><code class="language-Java">import java.util.*;
+
+public class mat_transpose {
+    public static void main(String args[]) {
+        int i, j, row, col;
+        Scanner sc = new Scanner(System.in);
+        System.out.print(&quot;\nEnter the number of rows and columns of matrix: &quot;);
+        row = sc.nextInt();
+        col = sc.nextInt();
+        int a[][] = new int[row][col];
+
+        System.out.println(&quot;Enter the elements of matrix: &quot;);
+        for (i = 0; i &lt; row; i++) {
+            for (j = 0; j &lt; col; j++) {
+                System.out.print(&quot;a[&quot; + i + &quot;][&quot; + j + &quot;] = &quot;);
+                a[i][j] = sc.nextInt();
+            }
+        }
+
+        System.out.println(&quot;\nMatrix before transpose: &quot;);
+        for (i = 0; i &lt; row; i++) {
+            for (j = 0; j &lt; col; j++) {
+                System.out.print(a[i][j] + &quot;\t&quot;);
+            }
+            System.out.println();
+        }
+
+        System.out.println(&quot;\nMatrix after transpose: &quot;);
+        for (i = 0; i &lt; col; i++) {
+            for (j = 0; j &lt; row; j++) {
+                System.out.print(a[j][i] + &quot;\t&quot;);
+            }
+            System.out.println();
+        }
+
+    }
+}</code></pre><p id="10c014d0-d488-4cae-8c65-45d7af85b223" class="">Output:</p><figure id="424a5637-ddb8-47e5-a68e-6c66970b282c" class="image"><a href="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%201.png"><img style="width:574px" src="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%201.png"/></a></figure><p id="78a68a31-9c27-4c9c-8be6-d45578c410b8" class="">
+</p><ol type="1" id="190a4319-d039-4225-a42e-c9d91683b9f3" class="numbered-list" start="3"><li><strong>Write a Java program to find the second smallest element in an array.</strong></li></ol><p id="87501a9f-f6ad-43d6-96f0-4d671dd89aa9" class="">Program:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="abe31793-8172-4d75-af89-6d29aebe276d" class="code"><code class="language-Java">import java.util.Scanner;
+
+public class SecondLargest {
+    public static void main(String args[]) {
+        int largest;
+        int secondlargest = 0;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print(&quot;\nEnter the size of the array : &quot;);
+        int n = sc.nextInt();
+        int ar[] = new int[n];
+        System.out.println(&quot;Enter the elements of the array : &quot;);
+        for (int i = 0; i &lt; n; i++) {
+            System.out.print(&quot;a[&quot; + i + &quot;] = &quot;);
+            ar[i] = sc.nextInt();
+        }
+
+        largest = ar[0];
+        for (int i = 0; i &lt; n; i++) {
+            if (largest &lt; ar[i]) {
+                secondlargest = largest;
+                largest = ar[i];
+
+            }
+        }
+
+        System.out.println(&quot;The second largest element is : &quot; + secondlargest + &quot;\n&quot;);
+        sc.close();
+    }
+
+}</code></pre><p id="f410317b-a4ff-4314-b12e-e006a2ba13f5" class="">Output:</p><figure id="cfc29aae-6ba2-4afb-9ba6-71a4e9de8a62" class="image"><a href="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%202.png"><img style="width:419px" src="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%202.png"/></a></figure><p id="4631d691-dc21-4aa3-aff9-6837c689ae15" class="">
+</p><ol type="1" id="1592d360-6a63-4ce6-a9dc-300514dce66e" class="numbered-list" start="4"><li><strong>Write a Java program to check whether a given number is prime or not.</strong></li></ol><p id="350e1d7d-4712-48c4-9bad-18e8aad4b4c9" class="">Program:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="857975b3-9cc3-419a-b492-28bb827472c5" class="code"><code class="language-Java">import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print(&quot;\nEnter a number:&quot;);
+        int num = scanner.nextInt();
+        boolean isPrime = true;
+
+        if (num &lt;= 1) {
+            isPrime = false;
+        }
+        for (int i = 2; i &lt;= num / 2; i++) {
+            if (num % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+
+        if (isPrime) {
+            System.out.println(num + &quot; is a prime number.\n&quot;);
+        } else {
+            System.out.println(num + &quot; is not a prime number.\n&quot;);
+        }
+        scanner.close();
+    }
+}</code></pre><p id="9cc99068-f2e2-40c2-8142-04d0f637d4a9" class="">Output:</p><figure id="13bb0f11-6bc3-40b8-8177-a23e0cc0682b" class="image"><a href="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%203.png"><img style="width:642px" src="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%203.png"/></a></figure><figure id="02f0d10c-edf2-4278-a436-fd47b060a0db" class="image"><a href="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%204.png"><img style="width:838px" src="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%204.png"/></a></figure><p id="7234aac9-311d-4359-943c-7ee0b5f9eef8" class="">
+</p><ol type="1" id="e3696030-1c4b-485c-8266-6c1215c77509" class="numbered-list" start="5"><li><strong>Write a Java program to calculate the area of different shapes namely circle, rectangle,<br/>and triangle using the concept of method overloading.<br/></strong></li></ol><p id="98176523-8724-43a4-ae63-95f5459583ca" class="">Program:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="21422daa-771d-4ee0-9e19-6b9c50976186" class="code"><code class="language-Java">import java.util.Scanner;
+
+public class AreaCalc {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int ch = 0, h, b;
+
+        do {
+
+            System.out.println(&quot;Find the area of&quot;);
+            System.out.println(&quot;\t1 - Circle&quot;);
+            System.out.println(&quot;\t2 - Rectangle&quot;);
+            System.out.println(&quot;\t3 - Triangle&quot;);
+            System.out.print(&quot;4 - Exit\nEnter your choice: &quot;);
+            ch = sc.nextInt();
+            switch (ch) {
+                case 1:
+                    System.out.print(&quot;Enter the radius of the circle: &quot;);
+                    b = sc.nextInt();
+                    circle(b);
+                    break;
+
+                case 2:
+                    System.out.print(&quot;Enter the length and breadth of the rectangle: &quot;);
+                    h = sc.nextInt();
+                    b = sc.nextInt();
+                    rectangle(h, b);
+                    break;
+
+                case 3:
+                    System.out.print(&quot;Enter the height and base of the triangle: &quot;);
+                    double height = sc.nextInt();
+                    double base = sc.nextInt();
+                    triangle(height, base);
+                    break;
+
+                case 4:
+                    System.out.println(&quot;Exiting...&quot;);
+                    break;
+
+                default:
+                    System.out.println(&quot;Invalid choice&quot;);
+                    break;
+            }
+        } while (ch != 4);
+        sc.close();
+    }
+
+    public static void circle(int r) {
+        System.out.println(&quot;The area of the circle is: &quot; + (3.14 * r * r));
+    }
+
+    public static void rectangle(int l, int b) {
+        System.out.println(&quot;The area of the rectangle is: &quot; + (l * b));
+    }
+
+    public static void triangle(double h, double b) {
+        System.out.println(&quot;The area of the triangle is: &quot; + (0.5 * h * b));
+    }
+
+}</code></pre><p id="14365fa6-bfa8-4b04-8d28-c41dc099e879" class="">Output:</p><figure id="a0b40868-7668-4c45-a419-80d43afeb214" class="image"><a href="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%205.png"><img style="width:473px" src="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%205.png"/></a></figure><p id="9a734cc5-c914-442f-bcf3-a65d2e807452" class="">
+</p><ol type="1" id="aeb08065-6300-4cc9-ad92-64d353c920d3" class="numbered-list" start="6"><li><strong>Write two Java classes Employee and Engineer. Engineer should inherit from Employee class. Employee class to have two methods display() and calcSalary(). Write a program to display the engineer salary and to display from Employee class using a single object instantiation (i.e., only one object creation is allowed).<br/><br/></strong><ol type="a" id="7cedc461-a49a-4c3f-b031-d03c0eb491a8" class="numbered-list" start="1"><li><strong>display() only prints the name of the class and does not return any value. Ex. &quot; Name<br/>of class is Employee.&quot;<br/><br/></strong></li></ol><ol type="a" id="e80ed422-4fa0-4a31-a384-5c403d561cee" class="numbered-list" start="2"><li><strong>calcSalary() in Employee displays &quot;Salary of employee is 10000&quot; and calcSalary() in<br/>Engineer displays &quot;Salary of employee is 2000.”<br/></strong></li></ol><p id="d49f5164-eb2c-4ddf-b3a1-ee5d0fad3a4b" class="">Program:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="37fc0ad6-cb79-4b17-a40a-b4929aabe412" class="code"><code class="language-undefined">class Employee {
+    public void display() {
+        System.out.println(&quot;\nName of class is Employee.&quot;);
+    }
+
+    public void calcSalary() {
+        System.out.println(&quot;Salary of employee is 10000\n&quot;);
+    }
+}
+
+class Engineer extends Employee {
+    public void calcSalary() {
+        System.out.println(&quot;Salary of employee is 20000\n&quot;);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Employee eng = new Engineer();
+        eng.display();
+        eng.calcSalary();
+    }
+}</code></pre><p id="7e9f90fc-f088-4b5d-8df1-a3b135111cb3" class="">Output:</p><figure id="f4b87df1-f6ac-4062-815d-1d7e8da15865" class="image"><a href="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%206.png"><img style="width:337px" src="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%206.png"/></a></figure></li></ol><p id="c00edcc7-7723-41c8-a9e3-0a3694da9e47" class="">
+</p><ol type="1" id="fc991fe3-0a53-4873-acde-6ad9d8f6be99" class="numbered-list" start="7"><li><strong>Write a Java program to illustrate Interface inheritance.</strong><p id="ab469034-c16b-41b3-a797-c6adf6aff562" class="">Program:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="bd4014eb-d1b7-44db-ac56-7b347fe55199" class="code"><code class="language-Java">public class Test implements Runnable {
+    /*
+     * An interface is inherited
+     * by using the &#x27;implements&#x27; keyword
+     * 
+     * Here Runnable is an interface
+     * with only one method &#x27;run()&#x27;
+     */
+    public void run() {
+        System.out.println();
+
+        for (int i = 0; i &lt;= 10; i++) {
+            System.out.println(i);
+        }
+
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Test T = new Test();
+        T.run();
+    }
+}</code></pre><p id="02ca4f0a-f3c9-4fc2-81c5-2086d6813dd5" class="">Output:</p><figure id="2b06c5ec-026e-4aa6-b3fc-9f6ad39f320c" class="image"><a href="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%207.png"><img style="width:98px" src="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%207.png"/></a></figure><p id="d1865b1a-7cfe-4126-91c7-d75112e83f8c" class="">
+</p></li></ol><ol type="1" id="b453f04d-96e0-4ef0-934c-b8aff83477e5" class="numbered-list" start="8"><li><strong>Write a Java program that shows how to create a user-defined exception.</strong><p id="43c7a05d-585b-4758-b6c3-b90bad1a77e7" class="">Program:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="361ccdd3-bf72-496f-a7bb-89279ad74104" class="code"><code class="language-Java">import java.util.Scanner;
+
+public class UserExcep {
+    public static void verifyAge(int age) {
+        if (age &lt; 1) {
+            throw new ArithmeticException(&quot;\nAccess denied - Enter a valid age.\n&quot;);
+        } else if (age &lt; 18) {
+            throw new ArithmeticException(&quot;\nAccess denied - 
+You must be at least 18 years old.\n&quot;);
+        } else {
+            System.out.println(&quot;\nAccess granted - You are old enough!\n&quot;);
+        }
+    }
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print(&quot;\nEnter your age : &quot;);
+        int age = sc.nextInt();
+
+        verifyAge(age);
+        sc.close();
+    }
+}</code></pre><p id="a049e7c1-e0e3-411f-aaf4-e5289d659fb2" class="">Output:</p><figure id="2ebcb79a-85e1-442e-bc3d-a2e4ee79f843" class="image"><a href="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%208.png"><img style="width:399px" src="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%208.png"/></a></figure><figure id="17c1af23-d430-4f69-97fc-f28976372b54" class="image"><a href="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%209.png"><img style="width:445px" src="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%209.png"/></a></figure><p id="e3bf2cf2-fffe-4858-af8a-db2ce57c8d11" class="">
+</p></li></ol><ol type="1" id="c4f437ed-0f39-4112-9582-30170820e232" class="numbered-list" start="9"><li><strong>Write a Java program to create two threads: One for displaying all odd number between 1<br/>and 100 and second thread for displaying all even numbers between 1 and 100.<br/></strong><p id="57a9bfd3-c66c-4927-af7a-1d5dd23d9a74" class="">Program:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="5f40d2e3-34d2-45ba-8abb-a7b5072b1460" class="code"><code class="language-undefined">class OddNums extends Thread {
+    public void run() {
+        for (int i = 1; i &lt;= 100; i++) {
+            if (i % 2 != 0) {
+                System.out.println(i);
+            }
+        }
+    }
+}
+
+class EvenNums extends Thread {
+    public void run() {
+        for (int i = 1; i &lt;= 100; i++) {
+            if (i % 2 == 0) {
+                System.out.println(i);
+            }
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        OddNums oddNums = new OddNums();
+        EvenNums evenNums = new EvenNums();
+        evenNums.start();
+
+        try {
+            evenNums.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        oddNums.start();
+    }
+}</code></pre><p id="497134e5-7a32-4ea8-b81e-000430e9d3e9" class="">Output:</p><p id="4403fa42-e357-449d-a58f-67c225560885" class="">2<br/>4<br/>6<br/>8<br/>10<br/>12<br/>14<br/>16<br/>18<br/>20<br/>22<br/>24<br/>26<br/>28<br/>30<br/>32<br/>34<br/>36<br/>38<br/>40<br/>42<br/>44<br/>46<br/>48<br/>50<br/>52<br/>54<br/>56<br/>58<br/>60<br/>62<br/>64<br/>66<br/>68<br/>70<br/>72<br/>74<br/>76<br/>78<br/>80<br/>82<br/>84<br/>86<br/>88<br/>90<br/>92<br/>94<br/>96<br/>98<br/>100<br/>1<br/>3<br/>5<br/>7<br/>9<br/>11<br/>13<br/>15<br/>17<br/>19<br/>21<br/>23<br/>25<br/>27<br/>29<br/>31<br/>33<br/>35<br/>37<br/>39<br/>41<br/>43<br/>45<br/>47<br/>49<br/>51<br/>53<br/>55<br/>57<br/>59<br/>61<br/>63<br/>65<br/>67<br/>69<br/>71<br/>73<br/>75<br/>77<br/>79<br/>81<br/>83<br/>85<br/>87<br/>89<br/>91<br/>93<br/>95<br/>97<br/>99<br/></p><p id="977b578b-f4a0-449c-b3ac-d5a56ec0e4ff" class="">
+</p></li></ol><ol type="1" id="7335c1e9-82db-45bb-a274-1aa65d3d094a" class="numbered-list" start="10"><li><strong>Write a Java program that shows thread priorities.</strong><p id="6ebc2748-9025-4d52-9375-65ff36446c1a" class="">Program:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1bc5163d-d822-4172-8f3f-f98cf8e2e3cb" class="code code-wrap"><code class="language-Java">class PriorityThread extends Thread {
+    public void run() {
+        System.out.println(&quot;\nThread Name: &quot; + Thread.currentThread().getName());
+        System.out.println(&quot;Thread Priority: &quot; + Thread.currentThread().getPriority() + &quot;\n&quot;);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        PriorityThread thread1 = new PriorityThread();
+        thread1.setName(&quot;Thread 1&quot;);
+        thread1.setPriority(Thread.MAX_PRIORITY);
+
+        PriorityThread thread2 = new PriorityThread();
+        thread2.setName(&quot;Thread 2&quot;);
+        thread2.setPriority(Thread.MIN_PRIORITY);
+
+        PriorityThread thread3 = new PriorityThread();
+        thread3.setName(&quot;Thread 3&quot;);
+        thread3.setPriority(Thread.NORM_PRIORITY);
+
+        /* Synchronising the threads
+        Such that the threads only start 
+        after the thread before it has 
+        finished. */ 
+
+        thread1.start();
+        try {
+            thread1.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        thread2.start();
+        try {
+            thread2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        thread3.start();
+    }
+}</code></pre><p id="514c77ea-1ddc-44c5-b195-e17802891e7f" class="">Output:</p><figure id="d0c52130-f553-488f-ac72-272a5eba42a7" class="image"><a href="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%2010.png"><img style="width:437px" src="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%2010.png"/></a></figure></li></ol><p id="4fb420c5-0504-4a4f-96d4-962b4bdc700a" class="">
+</p><ol type="1" id="feed512f-a25d-4588-be19-b80af93fa510" class="numbered-list" start="11"><li>Write a Java program that reads a file and displays the file on the screen, with a line<br/>number before each line. <br/><p id="4a4416a7-0b43-41f3-bf19-88c74bd07bed" class="">Program:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="5588c37d-6284-41e6-a150-deebf4ce55ba" class="code"><code class="language-Java">import java.io.*;
+import java.util.Scanner;
+
+public class FileDisplay {
+    public static void main(String[] args) throws IOException {
+        int lineCount = 0;
+
+        try {
+            File file = new File(&quot;file.txt&quot;);
+            Scanner sc = new Scanner(file);
+            System.out.println();
+            while (sc.hasNextLine()) {
+
+                lineCount++;
+                System.out.println(lineCount + &quot;: &quot; + sc.nextLine());
+
+            }
+            System.out.println();
+            sc.close();
+        } catch (FileNotFoundException e) {
+            System.out.println(&quot;File not found&quot;);
+        }
+
+    }
+}</code></pre><p id="94c09ade-db71-4488-942a-f9ceabcb1bcc" class="">Output:</p><figure id="6dcde8fd-8f2b-43e0-b037-dfcece350e27" class="image"><a href="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%2011.png"><img style="width:784px" src="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%2011.png"/></a></figure><p id="317b1887-999a-4240-924b-49cc7587c05c" class="">File Data:</p><p id="143f2f46-1799-4944-845a-03d65416a686" class="">There are many variations of passages of Lorem Ipsum available,<br/>but the majority have suffered alteration in some form, by injected humour,<br/>or randomised words which don&#x27;t look even slightly believable.<br/>If you are going to use a passage of Lorem Ipsum,<br/>you need to be sure there isn&#x27;t anything embarrassing hidden in the middle of text.<br/>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary,<br/>making this the first true generator on the Internet.<br/>It uses a dictionary of over 200 Latin words,<br/>combined with a handful of model sentence structures,<br/>to generate Lorem Ipsum which looks reasonable.<br/></p><p id="878de514-fede-429c-a9a8-ec72865078ba" class="">
+</p></li></ol><ol type="1" id="025aafbf-a555-4465-80e2-64c4d2cd6a30" class="numbered-list" start="12"><li><strong>Write a Java program that displays the number of characters, lines and words in a text<br/>file.<br/></strong><p id="4ffc73c7-28cb-4a88-ac85-acf1bf41362b" class="">Program:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="e9e3626d-2c94-45ca-99cd-357b7728abc6" class="code"><code class="language-Java">import java.io.*;
+import java.util.Scanner;
+
+public class FileDisplay {
+    public static void main(String[] args) throws IOException {
+        int lineCount = 0;
+        int wordCount = 0;
+        int charCount = 0;
+
+        try {
+            File file = new File(&quot;file.txt&quot;);
+            Scanner sc = new Scanner(file);
+            while (sc.hasNextLine()) {
+                lineCount++;
+                String line = sc.nextLine();
+
+                String[] words = line.split(&quot; &quot;);
+                wordCount += words.length;
+
+                charCount += line.length();
+            }
+            sc.close();
+        } catch (FileNotFoundException e) {
+            System.out.println(&quot;File not found&quot;);
+        }
+
+        System.out.println(&quot;\nNumber of lines: &quot; + lineCount);
+        System.out.println(&quot;Number of words: &quot; + wordCount);
+        System.out.println(&quot;Number of characters: &quot; + charCount + &quot;\n&quot;);
+    }
+}</code></pre><p id="3bf33d32-af52-4b44-be57-aad09a6f784f" class="">Output:</p><figure id="16e89dda-c7da-46a2-9303-7cae5c35f433" class="image"><a href="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%2012.png"><img style="width:517px" src="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%2012.png"/></a></figure><p id="ec59b55e-7797-4cc2-8d4a-2b0eaee1231b" class="">File Data:</p><p id="b2568265-8ad0-4aa9-ad8a-577e02cf3b6c" class="">There are many variations of passages of Lorem Ipsum available,<br/>but the majority have suffered alteration in some form, by injected humour,<br/>or randomised words which don&#x27;t look even slightly believable.<br/>If you are going to use a passage of Lorem Ipsum,<br/>you need to be sure there isn&#x27;t anything embarrassing hidden in the middle of text.<br/>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary,<br/>making this the first true generator on the Internet.<br/>It uses a dictionary of over 200 Latin words,<br/>combined with a handful of model sentence structures,<br/>to generate Lorem Ipsum which looks reasonable.<br/></p><p id="9f9cb0f8-b1f3-44e2-8fd5-707c81ee14bc" class="">
+</p></li></ol><ol type="1" id="da1035d5-b0fd-403c-a8c9-b0524afb29a5" class="numbered-list" start="13"><li><strong>Write a Java program for handling mouse events.</strong><p id="2b3c5076-7214-4c9e-810a-715f8db7b80e" class="">Program:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="f5014b02-ab3b-4129-8ff0-0e5eeabdc8ff" class="code"><code class="language-Java">import java.awt.event.*;
+import javax.swing.*;
+
+public class MouseEvents {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame(&quot;Mouse Event Handling&quot;);
+        frame.setSize(600, 400);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JPanel panel = new JPanel();
+        panel.setLayout(null);
+
+        JLabel label1 = new JLabel(&quot;No event&quot;);
+        JLabel label2 = new JLabel(&quot;No event&quot;);
+        JLabel label3 = new JLabel(&quot;No event&quot;);
+        JLabel label4 = new JLabel(&quot;No event&quot;);
+        JLabel label5 = new JLabel(&quot;No event&quot;);
+        JLabel label6 = new JLabel(&quot;&quot;);
+
+        label1.setBounds(20, 10, 300, 20);
+        label2.setBounds(20, 40, 300, 20);
+        label3.setBounds(20, 70, 300, 20);
+        label4.setBounds(20, 100, 300, 20);
+        label5.setBounds(20, 130, 300, 20);
+        label6.setBounds(20, 160, 300, 20);
+
+        panel.add(label1);
+        panel.add(label2);
+        panel.add(label3);
+        panel.add(label4);
+        panel.add(label5);
+        panel.add(label6);
+
+        frame.add(panel);
+        frame.setVisible(true);
+
+        frame.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent e) {
+                label1.setText(&quot;Mouse pressed at point: &quot; + e.getX() + &quot; , &quot; + e.getY());
+            }
+
+            public void mouseReleased(MouseEvent e) {
+                label2.setText(&quot;Mouse released at point: &quot; + e.getX() + &quot; , &quot; + e.getY());
+            }
+
+            public void mouseExited(MouseEvent e) {
+                label3.setText(&quot;Mouse exited through point: &quot; + e.getX() + &quot; , &quot; + e.getY());
+            }
+
+            public void mouseEntered(MouseEvent e) {
+                label4.setText(&quot;Mouse entered at point: &quot; + e.getX() + &quot; , &quot; + e.getY());
+            }
+
+            public void mouseClicked(MouseEvent e) {
+                label5.setText(&quot;Mouse clicked at point: &quot; + e.getX() + &quot; , &quot; + e.getY());
+                label6.setText(&quot;Number of clicks: &quot; + e.getClickCount());
+            }
+        });
+    }
+}</code></pre><p id="1388fef8-168a-4367-9117-de882faf172a" class="">Output:</p><figure id="2c8f1e57-06f4-4d36-8174-944258922943" class="image"><a href="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%2013.png"><img style="width:586px" src="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%2013.png"/></a></figure></li></ol><p id="d60ca7ed-fe58-4820-ba61-eecb800ef398" class="">
+</p><ol type="1" id="98915d1b-5f42-4bef-ab29-0e6a605c6f37" class="numbered-list" start="14"><li><strong>Write a Java program for handling key events using Adapter classes (general).</strong><p id="0f1cdaa9-0067-45fd-8cb9-6f83e423bcda" class="">Program:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2c8ffe22-f9d3-4043-981d-cac2001b653c" class="code"><code class="language-Java">import java.awt.event.*;
+import javax.swing.*;
+
+public class KeyEvents {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame(&quot;Key Event Handling&quot;);
+        frame.setSize(800, 600);
+        frame.setLayout(null);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JTextField textField = new JTextField(20);
+        JLabel label1 = new JLabel(&quot;Key typed: &quot;);
+        JLabel label2 = new JLabel(&quot;Key pressed: &quot;);
+        JLabel label3 = new JLabel(&quot;Key released: &quot;);
+        frame.add(textField);
+        frame.add(label1);
+        frame.add(label2);
+        frame.add(label3);
+        frame.setVisible(true);
+
+        label1.setBounds(200, 400, 400, 30);
+        label2.setBounds(200, 440, 400, 30);
+        label3.setBounds(200, 480, 400, 30);
+        textField.setBounds(200, 100, 400, 50);
+
+        // Using the KeyAdapter class
+        textField.addKeyListener(new KeyAdapter() {
+            public void keyTyped(KeyEvent e) {
+                label1.setText(&quot;Key typed: &quot; + e.getKeyChar());
+            }
+
+            public void keyPressed(KeyEvent e) {
+                label2.setText(&quot;Key pressed: &quot; + e.getKeyCode());
+            }
+
+            public void keyReleased(KeyEvent e) {
+                label3.setText(&quot;Key released: &quot; + e.getKeyCode());
+            }
+        });
+
+    }
+}</code></pre><p id="443e3765-c086-4653-ae76-7e978aed54ea" class="">Output:</p><figure id="e1f666ab-f277-4cd7-b529-cd51f4913596" class="image"><a href="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%2014.png"><img style="width:786px" src="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%2014.png"/></a></figure><p id="b8de53b3-3bea-4661-b360-2cd46c0d49de" class="">
+</p></li></ol><ol type="1" id="5922184a-cc2b-4464-88a3-b19effc636fa" class="numbered-list" start="15"><li><strong>Write a Java program that allows the user to draw lines, rectangles and ovals.</strong><p id="f3e05285-9c28-40b5-a4ab-ce13e9e3ac31" class="">Program:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="b4128cff-13b7-450f-9b18-d08312baa7ea" class="code"><code class="language-Java">import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class DrawShapes extends JFrame {
+    private int startX, startY, endX, endY;
+    private ShapeType currentShape;
+    private JPanel drawingPanel;
+
+    private enum ShapeType {
+        LINE, RECTANGLE, OVAL
+    }
+
+    public DrawShapes() {
+        setTitle(&quot;Simple Drawing Program&quot;);
+        setSize(800, 600);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        currentShape = ShapeType.LINE;
+
+        drawingPanel = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                switch (currentShape) {
+                    case LINE:
+                        g.drawLine(startX, startY, endX, endY);
+                        break;
+                    case RECTANGLE:
+                        g.drawRect(Math.min(startX, endX), Math.min(startY, endY),
+                                Math.abs(endX - startX), Math.abs(endY - startY));
+                        break;
+                    case OVAL:
+                        g.drawOval(Math.min(startX, endX), Math.min(startY, endY),
+                                Math.abs(endX - startX), Math.abs(endY - startY));
+                        break;
+                }
+            }
+        };
+
+        drawingPanel.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent e) {
+                startX = e.getX();
+                startY = e.getY();
+                endX = startX;
+                endY = startY;
+                drawingPanel.repaint();
+            }
+
+            public void mouseReleased(MouseEvent e) {
+                endX = e.getX();
+                endY = e.getY();
+                drawingPanel.repaint();
+            }
+        });
+
+        drawingPanel.addMouseMotionListener(new MouseMotionAdapter() {
+            public void mouseDragged(MouseEvent e) {
+                endX = e.getX();
+                endY = e.getY();
+                drawingPanel.repaint();
+            }
+        });
+
+        JButton lineButton = new JButton(&quot;Line&quot;);
+        lineButton.addActionListener(e -&gt; currentShape = ShapeType.LINE);
+
+        JButton rectangleButton = new JButton(&quot;Rectangle&quot;);
+        rectangleButton.addActionListener(e -&gt; currentShape = ShapeType.RECTANGLE);
+
+        JButton ovalButton = new JButton(&quot;Oval&quot;);
+        ovalButton.addActionListener(e -&gt; currentShape = ShapeType.OVAL);
+
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.add(lineButton);
+        buttonPanel.add(rectangleButton);
+        buttonPanel.add(ovalButton);
+
+        setLayout(new BorderLayout());
+        add(drawingPanel, BorderLayout.CENTER);
+        add(buttonPanel, BorderLayout.SOUTH);
+
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -&gt; new DrawShapes());
+    }
+}</code></pre><p id="e01fce98-b8fa-4ac2-b3ca-c35c643ddd35" class="">Output:</p><figure id="e038db14-45bc-46ea-8720-cef6a771e2ad" class="image"><a href="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%2015.png"><img style="width:786px" src="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%2015.png"/></a></figure></li></ol><p id="3f8ad105-2f17-473b-b7ca-32c1b64ae51c" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
