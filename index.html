@@ -729,12 +729,12 @@ public class mat_transpose {
 
     }
 }</code></pre><p id="10c014d0-d488-4cae-8c65-45d7af85b223" class="">Output:</p><figure id="424a5637-ddb8-47e5-a68e-6c66970b282c" class="image"><a href="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%201.png"><img style="width:574px" src="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%201.png"/></a></figure><p id="78a68a31-9c27-4c9c-8be6-d45578c410b8" class="">
-</p><ol type="1" id="190a4319-d039-4225-a42e-c9d91683b9f3" class="numbered-list" start="3"><li><strong>Write a Java program to find the second smallest element in an array.</strong></li></ol><p id="87501a9f-f6ad-43d6-96f0-4d671dd89aa9" class="">Program:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="abe31793-8172-4d75-af89-6d29aebe276d" class="code"><code class="language-Java">import java.util.Scanner;
+</p><ol type="1" id="190a4319-d039-4225-a42e-c9d91683b9f3" class="numbered-list" start="3"><li><strong>Write a Java program to find the second smallest element in an array.</strong></li></ol><p id="87501a9f-f6ad-43d6-96f0-4d671dd89aa9" class="">Program:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="abe31793-8172-4d75-af89-6d29aebe276d" class="code"><code class="language-Java">//Write a Java program to find the second smallest element in an array.
+import java.util.*;
 
-public class SecondLargest {
+public class SecondSmallest {
     public static void main(String args[]) {
-        int largest;
-        int secondlargest = 0;
+        int secondSmallest = 0;
 
         Scanner sc = new Scanner(System.in);
         System.out.print(&quot;\nEnter the size of the array : &quot;);
@@ -746,20 +746,14 @@ public class SecondLargest {
             ar[i] = sc.nextInt();
         }
 
-        largest = ar[0];
-        for (int i = 0; i &lt; n; i++) {
-            if (largest &lt; ar[i]) {
-                secondlargest = largest;
-                largest = ar[i];
+        Arrays.sort(ar);
+        secondSmallest = ar[1];
 
-            }
-        }
-
-        System.out.println(&quot;The second largest element is : &quot; + secondlargest + &quot;\n&quot;);
+        System.out.println(&quot;The second smallest element is : &quot; + secondSmallest + &quot;\n&quot;);
         sc.close();
     }
 
-}</code></pre><p id="f410317b-a4ff-4314-b12e-e006a2ba13f5" class="">Output:</p><figure id="cfc29aae-6ba2-4afb-9ba6-71a4e9de8a62" class="image"><a href="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%202.png"><img style="width:419px" src="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%202.png"/></a></figure><p id="4631d691-dc21-4aa3-aff9-6837c689ae15" class="">
+}</code></pre><p id="f410317b-a4ff-4314-b12e-e006a2ba13f5" class="">Output:</p><figure id="493e98ff-3652-407d-b32d-febf8c7b05ef" class="image"><a href="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%202.png"><img style="width:371px" src="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%202.png"/></a></figure><p id="c74a6c99-9f31-4357-aef1-2bfbb795bfb8" class="">
 </p><ol type="1" id="1592d360-6a63-4ce6-a9dc-300514dce66e" class="numbered-list" start="4"><li><strong>Write a Java program to check whether a given number is prime or not.</strong></li></ol><p id="350e1d7d-4712-48c4-9bad-18e8aad4b4c9" class="">Program:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="857975b3-9cc3-419a-b492-28bb827472c5" class="code"><code class="language-Java">import java.util.Scanner;
 
 public class Main {
@@ -1242,4 +1236,4 @@ public class DrawShapes extends JFrame {
         SwingUtilities.invokeLater(() -&gt; new DrawShapes());
     }
 }</code></pre><p id="e01fce98-b8fa-4ac2-b3ca-c35c643ddd35" class="">Output:</p><figure id="e038db14-45bc-46ea-8720-cef6a771e2ad" class="image"><a href="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%2015.png"><img style="width:786px" src="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%2015.png"/></a></figure></li></ol><p id="3f8ad105-2f17-473b-b7ca-32c1b64ae51c" class="">
-</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
+</p><figure id="f8ce36cc-b16a-45a5-85bb-919b54810417" class="image"><a href="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%2016.png"><img style="width:371px" src="JAVA%20Assignment%2042824e7f7a12478fb55e18f39865a799/Untitled%2016.png"/></a></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
